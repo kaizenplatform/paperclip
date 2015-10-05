@@ -20,7 +20,7 @@ module Paperclip
       elsif types.length == 1
         types.first.content_type
       else
-        best_content_type_option(types)
+        best_content_type_option(types).try(:content_type)
       end
     end
 
